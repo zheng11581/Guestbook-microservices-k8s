@@ -10,16 +10,16 @@ node {
       // **       in the global configuration.
       mvnHome = tool 'maven-3.6.3'
    }
-   //stage('Maven Build') {
-   //   sh 'mvn package'
-   //}
+   stage('Maven Build') {
+      sh 'mvn package'
+   }
 
-    //stage('Discovery service Docker Build') {
-    //  sh '''
-    //  cd discovery-service
-    //  docker build -t art.local:8081/docker-local/guestbook-microservices-k8s/discovery-service:latest .
-    //  docker push art.local:8081/docker-local/guestbook-microservices-k8s/discovery-service:latest
-    //  '''
-   //}
+    stage('Discovery service Docker Build') {
+      sh '''
+      cd discovery-service
+      docker build -t art.local:8081/docker-local/guestbook-microservices-k8s/discovery-service:latest .
+      docker push art.local:8081/docker-local/guestbook-microservices-k8s/discovery-service:latest
+      '''
+   }
 
 }
